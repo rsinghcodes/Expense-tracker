@@ -1,0 +1,39 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Backend for expense tracker",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.development.js",
+    "start": "node dist/index",
+    "dev": "nodemon dist/index"
+  },
+  "keywords": [
+    "webpack",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Raghvendra Singh",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "is-empty": "^1.2.0",
+    "mongoose": "^6.2.2",
+    "morgan": "^1.10.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
