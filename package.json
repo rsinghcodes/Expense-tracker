@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --config webpack.development.js",
     "start": "node dist/index",
-    "dev": "nodemon dist/index"
+    "server": "nodemon dist/index",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run build\" \"npm run server\" \"npm run client\""
   },
   "keywords": [
     "webpack",

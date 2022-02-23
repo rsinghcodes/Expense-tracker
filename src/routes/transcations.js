@@ -53,6 +53,29 @@ router.post('/', async (req, res) => {
 // @desc    Delete transaction
 // @route   DELETE /api/v1/transactions/:id
 // @access  Public
-router.delete('/:id', (req, res, next) => res.send('Delete transactions'));
+router.delete('/:id', async (req, res) => {
+  try {
+    const transaction = await Transaction.findById(req.params.id);
+
+    if (!transaction) {
+      return res.status(404).json({
+        success: false,
+        error: 'No transaction found',
+      });
+    }
+
+    await transaction.remove();
+
+    return res.status(200).json({
+      success: true,
+      data: {},
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      error: 'Server Error',
+    });
+  }
+});
 
 export default router;

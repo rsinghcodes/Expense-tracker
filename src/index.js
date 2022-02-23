@@ -1,5 +1,6 @@
 import express from 'express';
 import colors from 'colors';
+import morgan from 'morgan';
 
 import { MONOGO_DB, NODE_ENV, PORT } from './config';
 import connect from './database/connect';
@@ -8,6 +9,11 @@ import transactions from './routes/transcations';
 const app = express();
 
 app.use(express.json());
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use('/api/transcations', transactions);
 
 app.listen(PORT, async () => {
