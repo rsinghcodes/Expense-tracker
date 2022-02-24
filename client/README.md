@@ -1,3 +1,3 @@
 # Expense Tracker
 
-### Frontend
+> Frontend of Application
