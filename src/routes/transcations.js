@@ -64,11 +64,11 @@ router.delete('/:id', async (req, res) => {
       });
     }
 
-    await transaction.remove();
+    const deletedTransaction = await transaction.remove();
 
     return res.status(200).json({
       success: true,
-      data: {},
+      data: deletedTransaction,
     });
   } catch (err) {
     return res.status(500).json({
