@@ -2,7 +2,6 @@ import { CssBaseline, Grid } from '@mui/material';
 import { ThemeProvider, createTheme, alpha } from '@mui/material/styles';
 
 import './App.css';
-
 import {
   Header,
   AddTransaction,
@@ -28,12 +27,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-
       <Grid
         container
         justifyContent="center"
         alignItems="center"
-        // mt={3}
         gap={3}
         minHeight="90vh"
       >

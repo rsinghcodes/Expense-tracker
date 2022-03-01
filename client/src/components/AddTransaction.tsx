@@ -1,16 +1,16 @@
-import { useContext } from 'react';
 import * as Yup from 'yup';
 import { useFormik, Form, FormikProvider } from 'formik';
 import { Stack, TextField, Button } from '@mui/material';
 
-import { GlobalContext } from '../context/GlobalState';
+import { useAppDispatch } from '../redux/app/hooks';
+import { addTransaction } from '../redux/reducer/TransactionSlice';
 
 function AddTranscation() {
-  const { addTransaction } = useContext(GlobalContext);
+  const dispatch = useAppDispatch();
 
   const TranscationSchema = Yup.object().shape({
     text: Yup.string().required('Please enter your Expense/Income'),
-    amount: Yup.number().required('Amount field is required').integer(),
+    amount: Yup.number().required('Amount field is required'),
   });
 
   const formik = useFormik({
@@ -20,12 +20,11 @@ function AddTranscation() {
     },
     validationSchema: TranscationSchema,
     onSubmit: () => {
-      addTransaction(values);
+      dispatch(addTransaction(values));
     },
   });
 
-  const { errors, touched, values, isValidating, handleSubmit, getFieldProps } =
-    formik;
+  const { errors, touched, values, handleSubmit, getFieldProps } = formik;
 
   return (
     <FormikProvider value={formik}>

@@ -17,6 +17,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/transactions', transactions);
 
 app.listen(PORT, async () => {
-  console.log(`Server running on ${NODE_ENV} mode on port ${PORT}`.yellow.bold);
+  console.log(
+    `Server running on ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  );
   await connect({ db: MONOGO_DB });
 });

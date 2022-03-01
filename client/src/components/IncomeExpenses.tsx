@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import { useAppSelector } from '../redux/app/hooks';
+import { transactionSelector } from '../redux/reducer/TransactionSlice';
 import { numberWithCommas } from '../utils/format';
 
 const IncomeExpenses = () => {
-  const { transactions } = useContext(GlobalContext);
+  const { transactions } = useAppSelector(transactionSelector);
 
   const amounts = transactions.map((transaction) => transaction.amount);
 
@@ -21,11 +21,11 @@ const IncomeExpenses = () => {
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
-        <p className="money plus">₹{numberWithCommas(Number(income))}</p>
+        <p className="money plus">₹{numberWithCommas(income)}</p>
       </div>
       <div>
         <h4>Expense</h4>
-        <p className="money minus">₹{numberWithCommas(Number(expense))}</p>
+        <p className="money minus">₹{numberWithCommas(expense)}</p>
       </div>
     </div>
   );

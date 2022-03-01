@@ -1,13 +1,18 @@
-import React, { useContext, useEffect } from 'react';
-import { Transaction } from './Transaction';
+import { useEffect } from 'react';
 
-import { GlobalContext } from '../context/GlobalState';
+import { Transaction } from './Transaction';
+import { useAppDispatch, useAppSelector } from '../redux/app/hooks';
+import {
+  transactionSelector,
+  getTransactions,
+} from '../redux/reducer/TransactionSlice';
 
 const TransactionList = () => {
-  const { transactions, getTransactions } = useContext(GlobalContext);
+  const dispatch = useAppDispatch();
+  const { transactions } = useAppSelector(transactionSelector);
 
   useEffect(() => {
-    getTransactions();
+    dispatch(getTransactions());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

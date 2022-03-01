@@ -1,5 +1,8 @@
-import React, { useContext } from 'react';
-import { GlobalContext, TransactionType } from '../context/GlobalState';
+import { useAppDispatch } from '../redux/app/hooks';
+import {
+  deleteTransaction,
+  TransactionType,
+} from '../redux/reducer/TransactionSlice';
 import { numberWithCommas } from '../utils/format';
 
 export const Transaction = ({
@@ -7,7 +10,7 @@ export const Transaction = ({
 }: {
   transaction: TransactionType;
 }) => {
-  const { deleteTransaction } = useContext(GlobalContext);
+  const dispatch = useAppDispatch();
 
   const sign = transaction.amount < 0 ? '-' : '+';
 
@@ -18,7 +21,7 @@ export const Transaction = ({
         {sign}₹{numberWithCommas(Math.abs(transaction.amount))}
       </span>
       <button
-        onClick={() => deleteTransaction(transaction._id)}
+        onClick={() => dispatch(deleteTransaction(transaction._id))}
         className="delete-btn"
       >
         x

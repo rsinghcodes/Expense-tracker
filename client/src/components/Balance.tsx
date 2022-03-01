@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import { useAppSelector } from '../redux/app/hooks';
+import { transactionSelector } from '../redux/reducer/TransactionSlice';
 import { numberWithCommas } from '../utils/format';
 
 const Balance = () => {
-  const { transactions } = useContext(GlobalContext);
+  const { transactions } = useAppSelector(transactionSelector);
 
   const amounts = transactions.map((transaction) => transaction.amount);
 
@@ -12,7 +12,7 @@ const Balance = () => {
   return (
     <>
       <h4>Your Balance</h4>
-      <h1>₹{numberWithCommas(Number(total))}</h1>
+      <h1>₹{numberWithCommas(total)}</h1>
     </>
   );
 };
