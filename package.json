@@ -24,6 +24,7 @@
     "is-empty": "^1.2.0",
     "mongoose": "^6.2.2",
     "morgan": "^1.10.0",
+    "regenerator-runtime": "^0.13.9",
     "validator": "^13.7.0"
   },
   "devDependencies": {
