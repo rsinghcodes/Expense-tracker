@@ -3,7 +3,7 @@ import axios from 'axios';
 import { RootState } from '../app/store';
 
 export interface TransactionType {
-  _id: number;
+  _id?: number;
   text: string;
   amount: number;
 }

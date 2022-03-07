@@ -58,12 +58,10 @@ function App() {
           p={3}
           borderRadius="5px"
           borderColor={(theme) => alpha(theme.palette.grey[500], 0.72)}
-          maxHeight={{ sm: '455px' }}
           sx={{
             borderWidth: '1px',
             borderStyle: 'solid',
             width: { xs: '95%', sm: '50%', md: '35%' },
-            overflowY: { sm: 'scroll' },
           }}
         >
           <TransactionList />

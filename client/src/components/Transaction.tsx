@@ -21,7 +21,7 @@ export const Transaction = ({
         {sign}₹{numberWithCommas(Math.abs(transaction.amount))}
       </span>
       <button
-        onClick={() => dispatch(deleteTransaction(transaction._id))}
+        onClick={() => dispatch(deleteTransaction(transaction._id!))}
         className="delete-btn"
       >
         x
