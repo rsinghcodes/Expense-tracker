@@ -17,7 +17,6 @@
   "author": "Raghvendra Singh",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "is-empty": "^1.2.0",
