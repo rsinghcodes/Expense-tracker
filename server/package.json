@@ -4,13 +4,10 @@
   "description": "Backend for expense tracker",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.production.js && cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "build": "webpack --config webpack.production.js",
     "start": "node dist/index",
     "server": "nodemon dist/index",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run build\" \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run build\" \"npm run server\""
   },
   "keywords": [
     "webpack",

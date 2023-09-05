@@ -1,7 +1,6 @@
-import path from 'path';
 import express from 'express';
-import colors from 'colors';
 import morgan from 'morgan';
+import path from 'path';
 
 import { MONOGO_DB, NODE_ENV, PORT } from './config';
 import connect from './database/connect';
