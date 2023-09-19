@@ -20,46 +20,24 @@
 
 ## ⬇️ Installation & Set Up Guide
 
+> Before running the Expense Tracker application, make sure pre-requisite is met - i.e. *docker*. After the setup of the pre-requisites the application can be started.
+
 **Step :one::** Clone this repository to your local machine
 
 ```
 git clone https://github.com/rsinghcodes/Expense-tracker.git
 ```
 
-**Step :two::** Navigate to **server** directory.
+**Step :two::** Move to Expense tracker directory
 
 ```
-cd server
+cd Expense-tracker
 ```
 
-**Step :three::** Install the dependencies.
+**Step :three::** Run the below command
 
 ```
-npm install
-```
-
-**Step :four::** Open another new terminal, navigate to **client** directory.
-
-```
-cd client
-```
-
-**Step :five::** Install all the dependencies.
-
-```
-npm install
-```
-
-**Step :six::** Now come out to main directory
-
-```
-cd ..
-```
-
-**Step :seven::** Now start **Expense Tracker** Application
-
-```
-npm run dev
+docker compose up -d
 ```
 
 Your app is ready to be run! ✨✨\
